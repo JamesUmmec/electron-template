@@ -1,4 +1,4 @@
-import { mkdirSync, readdirSync, readFileSync, stat, statSync, writeFileSync } from "fs"
+import { mkdirSync, readdirSync, readFileSync, statSync, writeFileSync } from "fs"
 import * as toml from "toml"
 import { Lang } from "./both"
 
@@ -10,23 +10,18 @@ import { Lang } from "./both"
 export function fileToObject(path: string, to: Object) {
 	let parts = inCaseWindows(path).split("/")
 	if (parts.length === 2) {
-		ensureDir(parts[0])
 		try { readObject(readFileSync(path, "utf8"), to) } catch {}
 	}
 }
 
 /**
  * 将对象储存为文件(JSON格式)。
- * 文件路径需由一级目录和文件名称构成。(当然这个地方也只用得到这种)
  * @param path 保存的路径
  * @param from 将这个对象保存
  */
 export function saveObject(path: string, from: Object) {
-	let parts = inCaseWindows(path).split("/")
-	if (parts.length === 2) {
-		ensureDir(parts[0])
-		try { writeFileSync(path, JSON.stringify(from)) } catch {}
-	}
+	ensureDir(path)
+	try { writeFileSync(path, JSON.stringify(from)) } catch {}
 }
 
 /**
@@ -38,13 +33,16 @@ export function saveObject(path: string, from: Object) {
  * 文件不用处理，因为读文件的时候若不存在会自动创建。
  * 
  * @param name 文件夹的名称
+ * @returns 原先有没有这个文件夹
  */
-function ensureDir(name: string) {
-	stat(name, (err, info) => {
-		if (!info || err) {
-			mkdirSync(name)
-		}
-	})
+export function ensureDir(name: string) {
+	try {
+		let temp = statSync(name)
+		if (temp.isDirectory()) { return true }
+	} catch {}
+
+	try { mkdirSync(name) } catch {}
+	return false
 }
 
 /**
@@ -94,7 +92,7 @@ export module tomlLang {
 				} } catch {}
 			})
 		} catch { list = [] }
-		return list.reverse()
+		return list
 	}
 
 	/**

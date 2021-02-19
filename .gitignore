@@ -8,6 +8,7 @@ package-lock.json
 
 # 配置文件存放的地方
 /config
+/lang
 
 # 设计文件原图
 /doc/icon.pptx

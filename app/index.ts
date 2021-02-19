@@ -1,6 +1,12 @@
 import { app, BrowserWindow, ipcMain } from "electron"
 import { Config, lang, Status } from "./config";
 import { Config as ConfigRaw, ConfigMessage, MessageMode } from "./both"
+import { ensureDir } from "./file"
+import { ensure } from "./basic"
+
+const CONFIG_DIR = "config"
+ensureDir(CONFIG_DIR)
+setTimeout(() => { ensure() }, 100)
 
 let config = new Config()
 let status = new Status()
