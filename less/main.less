@@ -1,0 +1,75 @@
+// 所显示的主要文字
+#main {
+	font-size: 107px;
+	font-weight: bolder;
+
+	width: 80%;
+	text-align: center;
+}
+
+// 显示当前的时间
+#sub {
+	font-size: 35px;
+	font-weight: lighter;
+}
+
+// 设置按钮
+#buttons {
+	position: fixed;
+	right: 45px;
+	bottom: 25px;
+
+	display: flex;
+	@button-size: 35px;
+	> div {
+		width: @button-size;
+		height: @button-size;
+		margin: 10px;
+		> img { width: 100%; height: 100%; }
+	}
+}
+
+// 语言设置面板
+#pad {
+	display: none;
+
+	position: fixed;
+	bottom: 96px;
+	right: 55px;
+	height: 375px;
+	width: 200px;
+
+	@border-radius: 10px;
+	border-width: 1px;
+	border-style: solid;
+	border-radius: @border-radius;
+
+	> div::-webkit-scrollbar { width: 1px; }
+	> div::-webkit-scrollbar-thumb { background-color: #804040; }
+	> div {
+		position: absolute;
+		width: 100%;
+		top: @border-radius;
+		bottom: @border-radius;
+
+		overflow-y: scroll;
+	}
+
+	// 一个语言展示块所展示的样式
+	.lang-tag {
+		width: 100%;
+		height: 82px;
+
+		> div { width: 80%; }
+
+		.lang-name {
+			font-size: 25px;
+			font-weight: bolder;
+		}
+
+		.lang-comment {
+			font-size: 14px;
+			font-weight: lighter;
+		}
+	}
+}

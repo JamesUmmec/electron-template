@@ -1,0 +1,34 @@
+// 深色主题
+// 不同的颜色主题也应当具有相同的结构，
+// 更改颜色主题时是直接更改 CSS href
+
+@bg: #232323;
+@gray: #9b9b9b;
+@shadow: #323232;
+
+// 总体颜色
+body, header, header > div > .btn, #pad, .lang-tag {
+	background-color: @bg; color: @gray;
+}
+
+// 标题栏颜色
+#border > div { background-color: #565656; }
+.btn > img { filter: brightness(85%); }
+.btn:hover {
+	filter: brightness(135%);
+	> img { filter: brightness(150%); }
+} .close:hover {
+	background-color: #c04851;
+	filter: brightness(125%);
+	> img { filter: brightness(100); }
+}
+
+// 主要展示部分颜色
+#main { color: #e7c87f; }
+#sub { color: #d4a2a0; }
+
+// 设置按钮和语言设置面板
+#buttons > div:hover { filter: brightness(165%); }
+#buttons > div { filter: brightness(75%); }
+.focus { background-color: @shadow; color: #d6d6d6; }
+#pad {border-color: #454545; }

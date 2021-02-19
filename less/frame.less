@@ -1,0 +1,98 @@
+// frame.less => dist/web/frame.css
+// 页面顶部以及页面边框
+
+// 页面的整体布局
+body {
+	margin: 0px;
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+	user-select: none;
+
+	header, article {
+		position: absolute;
+		width: 100vw;
+	}
+
+	@header-height: 30px;
+	header { height: @header-height; }
+	article { top: @header-height; bottom: 0px; }
+}
+
+// 页面边框有关的样式
+header {
+	overflow: hidden;
+	-webkit-app-region: drag;
+
+	> div { position: absolute; height: 100%; }
+	@icon-width: 48px;
+	@btn-width: 45px;
+	@btn-icon-size: 11px;
+
+	#icon {
+		width: @icon-width;
+		> img {
+			width: 30px;
+			height: 18px;
+		}
+	}
+
+	#title {
+		left: @btn-width * 4;
+		right: @btn-width * 4;
+		font-size: 13px;
+	}
+
+	#win {
+		width: @btn-width * 4;
+		right: 0px;
+		display: flex;
+
+		-webkit-app-region: no-drag;
+
+		> div {
+			width: @btn-width;
+			height: 100%;
+			> img {
+				width: @btn-icon-size;
+				height: @btn-icon-size;
+			}
+		}
+
+		#full > img {
+			width: @btn-icon-size * 1.2;
+			height: @btn-icon-size * 1.2;
+		}
+	}
+}
+
+// 平面状态下用于退出全屏状态的右上角小三角
+#corner:hover { filter: contrast(100%); }
+#corner {
+	// 默认不会展示只有在全屏状态才会展示
+	display: none;
+	z-index: 10;
+	filter: contrast(0%);
+
+	@corner-size: 21px;
+	position: fixed;
+	width: @corner-size;
+	height: @corner-size;
+	top: -1px;
+	right: -1px;
+	
+	> img {
+		width: 100%;
+		height: 100%;
+	}
+}
+
+// 页面边框：
+// 以免周边页面颜色相近而难以区分。
+#border {
+	div { position: fixed; }
+	.v-side { width: 1px; height: 100vh; }
+	.h-side { width: 100vw; height: 1px; }
+	#left { left: 0px; } #right { right: 0px; width: 1.5px; }
+	#top { top: 0px; } #bottom { bottom: 0px; height: 1.5px; }
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+		<title>未设置语言</title>
+
+		<!-- favicon 图标 -->
+		<link rel="shortcut icon" href="static/favicon.ico" type="image/x-icon">
+
+		<!-- css 样式表 -->
+		<link rel="stylesheet" href="dist/web/frame.css">
+		<link rel="stylesheet" href="dist/web/utils.css">
+		<link rel="stylesheet" href="dist/web/main.css">
+
+		<!-- 明暗主题所对应的样式表 -->
+		<link rel="stylesheet" href="dist/web/light.css" id="theme-css">
+		
+		<!-- javascript 脚本 -->
+		<script src="dist/web/config.js"></script>
+		<script src="dist/web/main.js"></script>
+	</head>
+
+	<body>
+		<!-- 窗口顶部样式：图标、标题栏以及窗口控制按钮 -->
+		<header>
+			<div id="icon" class="center"><img src="static/icon.svg"></div>
+			<div id="title" class="center">未设置语言</div>
+			<div id="win">
+				<div id="min" class="btn center"><img src="static/min.svg"></div>
+				<div id="max" class="btn center"><img src="static/max.svg"></div>
+				<div id="full" class="btn center"><img src="static/full.svg"></div>
+				<div id="close" class="center close"><img src="static/close.svg"></div>
+			</div>
+		</header>
+
+		<!-- 页面边框装饰以区分这个页面和其他可能颜色相近的页面 -->
+		<div id="border">
+			<div class="v-side" id="left"></div>
+			<div class="v-side" id="right"></div>
+			<div class="h-side" id="top"></div>
+			<div class="h-side" id="bottom"></div>
+		</div>
+
+		<!-- 全屏状态用于退出的小三角按钮 -->
+		<div id="corner"><img src="static/corner.svg"></div>
+
+		<article>
+			<!-- 页面主要展示的内容 -->
+			<div id="index" class="full center-col">
+				<div id="main" class="line">hello world</div>
+				<div id="sub" class="line">00:00:00</div>
+			</div>
+
+			<!-- 右下角的设置按钮和设置面板 -->
+			<div id="setting">
+				<!-- 设置按钮 -->
+				<div id="buttons">
+					<div id="theme" title="dark-theme"><img src="static/dark.svg"></div>
+					<div id="lang" title="language"><img src="static/lang.svg"></div>
+				</div>
+
+				<!-- 展示面板 -->
+				<div id="pad"><div></div></div>
+			</div>
+		</article>
+	</body>
+</html>

@@ -1,0 +1,16 @@
+{
+	"compilerOptions": {
+		"module": "commonjs",
+		"noImplicitAny": true,
+		"removeComments": true,
+		"outDir": "../dist/app"
+	},
+	"include": ["."],
+	"exclude": [
+		"../build",
+		"../dist",
+		"../node_modules",
+		"../src"
+	],
+	"compileOnSave": true
+}

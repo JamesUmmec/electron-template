@@ -1,0 +1,13 @@
+# npm 管理并自动生成的文件夹和文件
+/node_modules
+package-lock.json
+
+# 编译后的输出文件
+/build
+/dist
+
+# 配置文件存放的地方
+/config
+
+# 设计文件原图
+/doc/icon.pptx

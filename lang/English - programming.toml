@@ -1,0 +1,5 @@
+title = "template demo"
+main = "Hello World!"
+light = "light theme"
+dark = "dark theme"
+lang = "select language"
