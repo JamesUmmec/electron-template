@@ -31,3 +31,9 @@
 - **Krita 官方下载地址** [krita.org/zh/download-zh/krita-desktop-zh](https://krita.org/zh/download-zh/krita-desktop-zh/)
 
 - **GIMP 官方下载地址** [gimp.org/downloads](https://www.gimp.org/downloads/)
+
+## 声明
+
+- 这个图标是照着家乡秋天的银杏树叶画的，并不是任何商标，也未从事任何盈利活动，截至绘图完成后网上并没有查到雷同图标。如有雷同，请看看时间顺序。如果是鄙人在先，那抢注者犬豕不如。如果实在是鄙人在后，请联系删除更改。
+
+- 示例中的多语言功能除中文和英文外皆通过网络翻译，除中文英语俄语外皆盲翻无对照，可能有误，敬请谅解，知道能做成这个效果就可以了。
