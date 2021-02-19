@@ -6,7 +6,7 @@ import { ensure } from "./basic"
 
 const CONFIG_DIR = "config"
 ensureDir(CONFIG_DIR)
-setTimeout(() => { ensure() }, 100)
+ensure()
 
 let config = new Config()
 let status = new Status()
