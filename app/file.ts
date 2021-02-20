@@ -20,7 +20,8 @@ export function fileToObject(path: string, to: Object) {
  * @param from 将这个对象保存
  */
 export function saveObject(path: string, from: Object) {
-	ensureDir(path)
+	let parts = inCaseWindows(path).split("/")
+	if (parts.length === 2) { ensureDir(parts[0]) }
 	try { writeFileSync(path, JSON.stringify(from)) } catch {}
 }
 
