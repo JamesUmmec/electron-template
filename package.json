@@ -1,6 +1,6 @@
 {
 	"name": "electron-template",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "Template of electron software development",
 	"main": "dist/app/index.js",
 	"scripts": {
